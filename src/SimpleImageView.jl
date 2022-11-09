@@ -1,6 +1,7 @@
 module SimpleImageView
 
 using Colors, ImageShow
+using SnoopPrecompile
 
 export simshow
 
@@ -88,6 +89,7 @@ end
 
 
 
+include("precompile.jl")
 
 
 end # module SimpleImageView

@@ -1,8 +1,5 @@
 # SimpleImageView.jl
 Visually looking at data - differently said: a simple image viewer
-
-
-
 <br>
 
 | **Build Status**                          | **Code Coverage**               |

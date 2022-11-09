@@ -49,5 +49,5 @@ Using Pluto's interactivity, one can realize simple, and interactive viewers.
 [codecov-img]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl
 
-[CI-img]: (ttps://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml/badge.svg
+[CI-img]: https://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml/badge.svg
 [CI-url]: https://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml

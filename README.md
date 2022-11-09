@@ -1,8 +1,5 @@
 # SimpleImageView.jl
 Visually looking at data - differently said: a simple image viewer
-
-
-
 <br>
 
 | **Build Status**                          | **Code Coverage**               |
@@ -17,7 +14,7 @@ within [Pluto.jl](https://github.com/fonsp/Pluto.jl/) or [IJulia.jl (Jupyter not
 ## Installation
 Not registered yet. 
 ```julia
-julia> ]add https://github.com/roflmaostc/SimpleImageView.jl/new/main?readme=1
+julia> ]add https://github.com/roflmaostc/SimpleImageView.jl
 ```
 
 
@@ -46,8 +43,8 @@ Using Pluto's interactivity, one can realize simple, and interactive viewers.
 
 
 
-[codecov-img]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl
+[codecov-img]: https://codecov.io/gh/roflmaostc/SimpleImageView.jl/branch/main/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/roflmaostc/SimpleImageView.jl
 
 [CI-img]: https://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml/badge.svg
 [CI-url]: https://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml

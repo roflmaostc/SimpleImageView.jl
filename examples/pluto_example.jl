@@ -27,7 +27,7 @@ using Revise, SimpleImageView, Colors, PlutoUI, FFTW
 using TestImages
 
 # ╔═╡ cfbce045-5191-459d-8417-fd98cba6e0a6
-md"## Load an Image"
+md"## Load an image"
 
 # ╔═╡ ed6d1620-baa1-4907-a582-467b5506b84c
 img = testimage("mandril_gray");
@@ -53,13 +53,15 @@ simshow
 simshow(img)
 
 # ╔═╡ 18952447-7a83-4551-b033-09cffc7487ea
-md"## Now alsow with arrays!"
+md"## with arrays"
 
 # ╔═╡ 9b2925c0-3e2d-4e8f-a146-4bb28a75654a
 simshow(arr)
 
 # ╔═╡ 1b39eec1-6b97-4718-a989-873f06e91be9
-md"## More Pluto Features included!"
+md"## More Pluto features included
+Change the γ
+"
 
 # ╔═╡ 164134c4-dc6c-47b6-ad7f-40db9898c055
 md"γ = $(@bind γ Slider(0.1:0.1:4, show_value=true))"
@@ -68,7 +70,9 @@ md"γ = $(@bind γ Slider(0.1:0.1:4, show_value=true))"
 simshow(arr, γ=γ)
 
 # ╔═╡ 4c358769-2e61-4463-97de-7cfa8a0e605e
-md"# Pass a function"
+md"# Pass a function
+To increase the contrast or ...
+"
 
 # ╔═╡ 4ba38e5e-1d80-4d57-afb4-e281c1746643
 simshow(arr,  f = x -> log.(0.5 .+ x))
@@ -89,7 +93,9 @@ md"absγ = $(@bind absγ Slider(0.1:0.1:4, show_value=true))"
 simshow(arr .* exp.(1im .* 2π .* arr2); absγ)
 
 # ╔═╡ a2d97aab-78c3-40f7-8db1-14b5f4004023
-md"## Apply a function to the complex valued array"
+md"## Apply a function to the complex valued array
+Such as the FFT
+"
 
 # ╔═╡ 28238d7c-c505-432a-b901-3bb411ed0b62
 simshow(arr .* exp.(1im .* 2π .* arr2); f=x -> fftshift(fft(x)), absγ=0.1)
@@ -104,7 +110,7 @@ simshow(arr .* exp.(1im .* 2π .* arr2); f=x -> fftshift(fft(x)), absγ=0.1)
 # ╠═7f8e71ad-9df5-4d64-b981-bfd527ea4c4b
 # ╟─b3ac88ae-537c-4d4b-9d05-265920cbe5fa
 # ╠═3653f52f-056b-4fae-8962-992643970f34
-# ╠═4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
+# ╟─4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
 # ╠═6ed33866-d441-4abb-96a4-39862d94d03c
 # ╠═60964d5d-90df-46c6-8bd8-c2e92cec2204
 # ╟─18952447-7a83-4551-b033-09cffc7487ea

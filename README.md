@@ -2,6 +2,14 @@
 Visually looking at data - differently said: a simple image viewer
 
 
+
+<br>
+
+| **Build Status**                          | **Code Coverage**               |
+|:-----------------------------------------:|:-------------------------------:|
+| [![][CI-img]][CI-url] | [![][codecov-img]][codecov-url] |
+
+
 Heavily based on [Colors.jl](https://github.com/JuliaGraphics/Colors.jl) and the ability to display such color types 
 within [Pluto.jl](https://github.com/fonsp/Pluto.jl/) or [IJulia.jl (Jupyter notebooks)](https://github.com/JuliaLang/IJulia.jl).
 
@@ -36,3 +44,10 @@ Using Pluto's interactivity, one can realize simple, and interactive viewers.
 
 ![](docs/assets/complex_arrays_pluto.png)
 
+
+
+[codecov-img]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/roflmaostc/DeconvOptim.jl
+
+[CI-img]: (ttps://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml/badge.svg
+[CI-url]: https://github.com/roflmaostc/SimpleImageView.jl/actions/workflows/ci.yml

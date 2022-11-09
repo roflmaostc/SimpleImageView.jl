@@ -14,7 +14,7 @@ within [Pluto.jl](https://github.com/fonsp/Pluto.jl/) or [IJulia.jl (Jupyter not
 ## Installation
 Not registered yet. 
 ```julia
-julia> ]add https://github.com/roflmaostc/SimpleImageView.jl/new/main?readme=1
+julia> ]add https://github.com/roflmaostc/SimpleImageView.jl
 ```
 
 

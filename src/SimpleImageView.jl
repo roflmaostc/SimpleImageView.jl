@@ -5,13 +5,34 @@ using Colors, ImageShow
 export simshow
 
 """
-    simshow(arr::AbstractArray{<:Colors.ColorTypes.Colorant})
+    simshow(arr; set_one=false, set_zero=false,
+                f = identity, γ=1)
 
-If `simshow` receives a normal array, don't change it and just display it.
-Acts as identity.
+Displays a real valued array . Brightness encodes magnitude.
+Works within Jupyter and Pluto.
+
+# Keyword args
+The transforms are applied in that order.
+
+* `set_zero=false` subtracts the minimum to set minimum to 1
+* `set_one=false` divides by the maximum to set maximum to 1
+* `f` applies an arbitrary function to the abs array
+* `γ` applies a gamma correction to the abs 
 """
-function simshow(arr::AbstractArray{<:Colors.ColorTypes.Colorant})
-    return arr
+function simshow(arr::AbstractArray{<:Real}; 
+                 set_one=true, set_zero=false,
+                 f = identity,
+                 γ = 1)
+    arr = set_zero ? arr .- minimum(arr) : arr
+    arr = set_one ? arr ./ maximum(arr) : arr
+
+    arr = f(arr) 
+
+    if !isone(γ)
+        arr .= arr .^ γ
+    end
+
+    Gray.(arr)
 end
 
 
@@ -38,7 +59,7 @@ function simshow(arr::AbstractArray{T};
 
     absarr .= absf(absarr)
     
-    if !isone(γ)
+    if !isone(absγ)
         absarr .= absarr .^ absγ
     end
 
@@ -47,36 +68,19 @@ function simshow(arr::AbstractArray{T};
     HSV.(angarr, one(Tr), absarr)
 end
 
+
+
 """
-    simshow(arr; set_one=false, set_zero=false,
-                f = identity, γ=1)
+    simshow(arr::AbstractArray{<:Colors.ColorTypes.Colorant})
 
-Displays a real valued array . Brightness encodes magnitude.
-Works within Jupyter and Pluto.
-
-# Keyword args
-The transforms are applied in that order.
-
-* `set_zero=false` subtracts the minimum to set minimum to 1
-* `set_one=false` divides by the maximum to set maximum to 1
-* `absf` applies an arbitrary function to the abs array
-* `absγ` applies a gamma correction to the abs 
+If `simshow` receives an array which already contains color information, just display it.
 """
-function simshow(arr::AbstractArray{<:Real}; 
-                 set_one=true, set_zero=false,
-                 f = identity,
-                 γ = 1)
-    arr = set_zero ? arr .- minimum(arr) : arr
-    arr = set_one ? arr ./ maximum(arr) : arr
-
-    arr = f(arr) 
-
-    if !isone(γ)
-        arr .= arr .^ γ
-    end
-
-    Gray.(arr)
+function simshow(arr::AbstractArray{<:Colors.ColorTypes.Colorant})
+    return arr
 end
+
+
+
 
 
 end # module SimpleImageView

@@ -46,12 +46,19 @@ Works within Jupyter and Pluto.
 # Keyword args
 The transforms are applied in that order.
 
-* `absf` applies an arbitrary function to the abs array
+* `f` applies a function `f` to the array.
+* `absf` applies a function `absf` to the absolute of the array
 * `absγ` applies a gamma correction to the abs 
 """
 function simshow(arr::AbstractArray{T};
+                 f = nothing,
                  absγ=1,
                  absf = identity) where (T<:Complex)
+
+    if !isnothing(f)
+        arr = f(arr)
+    end
+
     Tr = real(T)
     # scale abs to 1
     absarr = abs.(arr)

@@ -28,7 +28,9 @@ end
                 y .= x[1]
                 y
             end)) == ColorTypes.HSV{Float64}[HSV{Float64}(0.0,1.0,0.999999995), HSV{Float64}(90.0,1.0,0.999999995), HSV{Float64}(180.0,1.0,0.999999995), HSV{Float64}(-90.0,1.0,0.999999995), HSV{Float64}(-0.00572957793220964,1.0,0.999999995)]
-
+    simshow([0.1, 0im], f = (x->begin
+                1.1 .* ones(ComplexF32, (2,))
+            end)) == HSV{Float64}[HSV{Float64}(0.0,1.0,1.0), HSV{Float64}(0.0,1.0,1.0)]
 end
 
 @testset "Colorant Array" begin

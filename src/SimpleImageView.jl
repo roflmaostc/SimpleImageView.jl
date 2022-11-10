@@ -7,7 +7,7 @@ export simshow
 
 """
     simshow(arr; set_one=false, set_zero=false,
-                f = identity, γ=1)
+                f=nothing, γ=1)
 
 Displays a real valued array . Brightness encodes magnitude.
 Works within Jupyter and Pluto.
@@ -22,15 +22,15 @@ The transforms are applied in that order.
 """
 function simshow(arr::AbstractArray{<:Real}; 
                  set_one=true, set_zero=false,
-                 f = identity,
+                 f = nothing,
                  γ = 1)
     arr = set_zero ? arr .- minimum(arr) : arr
     arr = set_one ? arr ./ maximum(arr) : arr
 
-    arr = f(arr) 
+    arr = isnothing(f) ? arr : f(arr)
 
     if !isone(γ)
-        arr .= arr .^ γ
+        arr = arr .^ γ
     end
 
     Gray.(arr)
@@ -52,9 +52,9 @@ The transforms are applied in that order.
 * `absγ` applies a gamma correction to the abs 
 """
 function simshow(arr::AbstractArray{T};
-                 f = nothing,
+                 f=nothing,
                  absγ=1,
-                 absf = identity) where (T<:Complex)
+                 absf=nothing) where (T<:Complex)
 
     if !isnothing(f)
         arr = f(arr)
@@ -65,7 +65,9 @@ function simshow(arr::AbstractArray{T};
     absarr = abs.(arr)
     absarr ./= maximum(absarr)
 
-    absarr .= absf(absarr)
+    if !isnothing(absf)
+        absarr .= absf(absarr)
+    end
     
     if !isone(absγ)
         absarr .= absarr .^ absγ

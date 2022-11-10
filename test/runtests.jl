@@ -14,6 +14,10 @@ using ColorTypes
     @test simshow([0.1, -0.1], set_one = false, set_zero = false) == ColorTypes.Gray{Float64}[Gray{Float64}(0.1), Gray{Float64}(-0.1)]
     @test simshow([0.1, 0], γ = 2, set_one = false) == ColorTypes.Gray{Float64}[Gray{Float64}(0.010000000000000002), Gray{Float64}(0.0)]
     @test simshow([0.1, 0], f = (x-> zeros((2,))), set_one = false) == ColorTypes.Gray{Float64}[Gray{Float64}(0.0), Gray{Float64}(0.0)]
+
+
+    @test simshow([0, 1, 2], cmap = :thermal) == ColorTypes.RGB{Float64}[RGB{Float64}(0.015556013331540799,0.13824424546464084,0.2018108864558305), RGB{Float64}(0.6893346807608062,0.37270416310862364,0.5096912535037159), RGB{Float64}(0.9090418416674036,0.9821574063216706,0.3555078064299531)]
+
 end
 
 

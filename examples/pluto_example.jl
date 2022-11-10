@@ -62,7 +62,7 @@ md"## with arrays"
 simshow(arr)
 
 # ╔═╡ 9b2925c0-3e2d-4e8f-a146-4bb28a75654a
-simshow(arr, cmap=:thermal)
+simshow(arr, cmap=:tableau_colorblind)
 
 # ╔═╡ 1b39eec1-6b97-4718-a989-873f06e91be9
 md"## More Pluto features included

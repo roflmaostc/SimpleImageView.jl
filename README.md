@@ -23,7 +23,7 @@ julia> ]add https://github.com/roflmaostc/SimpleImageView.jl
 * Gamma correction
 * clipping and contrast adjustment
 * function application
-
+* apply easily different colormaps from [ColorSchemes.jl](https://juliagraphics.github.io/ColorSchemes.jl/stable/catalogue/)
 
 ## Examples
 ```julia

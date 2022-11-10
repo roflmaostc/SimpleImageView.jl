@@ -2,7 +2,7 @@
 
 julia_version = "1.8.2"
 manifest_format = "2.0"
-project_hash = "20ef37bbad2be897b656bbe4099306c224797d61"
+project_hash = "ca7ffe427256ba26e3427f5da8b29a95ec6d780c"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra"]
@@ -71,6 +71,12 @@ deps = ["TranscodingStreams", "Zlib_jll"]
 git-tree-sha1 = "ded953804d019afa9a3f98981d99b33e3db7b6da"
 uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
 version = "0.7.0"
+
+[[deps.ColorSchemes]]
+deps = ["ColorTypes", "ColorVectorSpace", "Colors", "FixedPointNumbers", "Random"]
+git-tree-sha1 = "1fd869cc3875b57347f7027521f561cf46d1fcd8"
+uuid = "35d6a980-a343-548e-a6ea-1d62b119f2f4"
+version = "3.19.0"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -665,7 +671,7 @@ uuid = "777ac1f9-54b0-4bf8-805c-2214025038e7"
 version = "1.1.0"
 
 [[deps.SimpleImageView]]
-deps = ["Colors", "ImageShow"]
+deps = ["ColorSchemes", "Colors", "ImageShow", "Reexport", "SnoopPrecompile"]
 path = ".."
 uuid = "c6ce2cd2-2c2a-488c-bfa1-710b1b6847e9"
 version = "0.1.0"

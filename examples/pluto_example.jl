@@ -21,7 +21,10 @@ using Pkg
 Pkg.activate(".")
 
 # ╔═╡ 58407289-ce99-4e8e-a52b-2dee09c225a0
-using Revise, SimpleImageView, Colors, PlutoUI, FFTW
+using Revise, Colors, PlutoUI, FFTW
+
+# ╔═╡ bb324ed3-a83b-4608-90b2-b0b18288e54e
+using SimpleImageView
 
 # ╔═╡ f81c408a-9677-4c3d-9a14-b0bca324f8f9
 using TestImages
@@ -41,6 +44,9 @@ md"## This works already with Colors"
 # ╔═╡ 3653f52f-056b-4fae-8962-992643970f34
 Gray.(arr)
 
+# ╔═╡ 59cc8714-b8fe-421a-b5c5-014c358b8070
+get(colorschemes[:grays], arr)
+
 # ╔═╡ 4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
 md"## Let's pimp it with `simshow`
 Look at the help with `?simshow`
@@ -55,8 +61,11 @@ simshow(img)
 # ╔═╡ 18952447-7a83-4551-b033-09cffc7487ea
 md"## with arrays"
 
-# ╔═╡ 9b2925c0-3e2d-4e8f-a146-4bb28a75654a
+# ╔═╡ 670d2811-5a21-4ef4-8c0b-b90f1f3353bd
 simshow(arr)
+
+# ╔═╡ 9b2925c0-3e2d-4e8f-a146-4bb28a75654a
+simshow(arr, cmap=:thermal)
 
 # ╔═╡ 1b39eec1-6b97-4718-a989-873f06e91be9
 md"## More Pluto features included
@@ -104,16 +113,19 @@ simshow(arr .* exp.(1im .* 2π .* arr2); f=x -> fftshift(fft(x)), absγ=0.1)
 # ╠═6b75cf1a-603b-11ed-37ee-d7f2b17aadb4
 # ╠═5e235e78-dcaf-448b-9e56-5e9ead1e4ce7
 # ╠═58407289-ce99-4e8e-a52b-2dee09c225a0
+# ╠═bb324ed3-a83b-4608-90b2-b0b18288e54e
 # ╠═f81c408a-9677-4c3d-9a14-b0bca324f8f9
 # ╟─cfbce045-5191-459d-8417-fd98cba6e0a6
 # ╠═ed6d1620-baa1-4907-a582-467b5506b84c
 # ╠═7f8e71ad-9df5-4d64-b981-bfd527ea4c4b
 # ╟─b3ac88ae-537c-4d4b-9d05-265920cbe5fa
 # ╠═3653f52f-056b-4fae-8962-992643970f34
+# ╠═59cc8714-b8fe-421a-b5c5-014c358b8070
 # ╟─4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
 # ╠═6ed33866-d441-4abb-96a4-39862d94d03c
 # ╠═60964d5d-90df-46c6-8bd8-c2e92cec2204
 # ╟─18952447-7a83-4551-b033-09cffc7487ea
+# ╠═670d2811-5a21-4ef4-8c0b-b90f1f3353bd
 # ╠═9b2925c0-3e2d-4e8f-a146-4bb28a75654a
 # ╟─1b39eec1-6b97-4718-a989-873f06e91be9
 # ╠═164134c4-dc6c-47b6-ad7f-40db9898c055

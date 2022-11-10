@@ -44,9 +44,6 @@ md"## This works already with Colors"
 # ╔═╡ 3653f52f-056b-4fae-8962-992643970f34
 Gray.(arr)
 
-# ╔═╡ 59cc8714-b8fe-421a-b5c5-014c358b8070
-get(colorschemes[:grays], arr)
-
 # ╔═╡ 4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
 md"## Let's pimp it with `simshow`
 Look at the help with `?simshow`
@@ -120,7 +117,6 @@ simshow(arr .* exp.(1im .* 2π .* arr2); f=x -> fftshift(fft(x)), absγ=0.1)
 # ╠═7f8e71ad-9df5-4d64-b981-bfd527ea4c4b
 # ╟─b3ac88ae-537c-4d4b-9d05-265920cbe5fa
 # ╠═3653f52f-056b-4fae-8962-992643970f34
-# ╠═59cc8714-b8fe-421a-b5c5-014c358b8070
 # ╟─4d7837d8-0a34-4cfc-a8b0-e7fa9dd93e02
 # ╠═6ed33866-d441-4abb-96a4-39862d94d03c
 # ╠═60964d5d-90df-46c6-8bd8-c2e92cec2204

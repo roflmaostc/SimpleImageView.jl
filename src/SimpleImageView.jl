@@ -21,13 +21,14 @@ The transforms are applied in that order.
 * `set_one=false` divides by the maximum to set maximum to 1
 * `f` applies an arbitrary function to the abs array
 * `γ` applies a gamma correction to the abs 
-* `cmap=:gray` applies a colormap provided by ColorSchemes.jl
+* `cmap=:gray` applies a colormap provided by ColorSchemes.jl. If `cmap=:gray` simply `Colors.Gray` is used
+    and with different colormaps the result is an `Colors.RGB` element type
 """
 function simshow(arr::AbstractArray{<:Real}; 
                  set_one=true, set_zero=false,
                  f = nothing,
                  γ = 1,
-                 cmap=:grays)
+                 cmap=:gray)
     arr = set_zero ? arr .- minimum(arr) : arr
 
     if set_one
@@ -43,7 +44,12 @@ function simshow(arr::AbstractArray{<:Real};
         arr = arr .^ γ
     end
 
-    get(colorschemes[cmap], arr)
+
+    if cmap == :gray
+        Gray.(arr)
+    else
+        get(colorschemes[cmap], arr)
+    end
 end
 
 

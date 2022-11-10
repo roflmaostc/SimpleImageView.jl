@@ -29,6 +29,9 @@ julia> ]add https://github.com/roflmaostc/SimpleImageView.jl
 ```julia
 simshow(randn((2,2)))
 simshow(rand(2,2), γ=0.1)
+simshow(rand(2,2), cmap=:thermal)
+
+# complex arrays
 simshow(randn(ComplexF64, (2,2)))
 simshow(randn(ComplexF64, (2,2)), absγ=0.1)
 simshow(randn(ComplexF64, (2,2)), f = fft)

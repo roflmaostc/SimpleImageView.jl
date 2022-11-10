@@ -1,6 +1,5 @@
 module SimpleImageView
 
-using Reexport 
 
 using Colors, ImageShow
 using ColorSchemes

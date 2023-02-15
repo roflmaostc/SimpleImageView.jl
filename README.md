@@ -1,3 +1,5 @@
+# Functionality is included in [ImageShow.jl](https://github.com/JuliaImages/ImageShow.jl/pull/56).
+
 # SimpleImageView.jl
 Visually looking at data - differently said: a simple image viewer
 <br>
